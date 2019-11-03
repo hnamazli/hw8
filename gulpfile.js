@@ -1,30 +1,34 @@
 const { src, dest, watch } = require('gulp');
-const less = require('gulp-less');
+const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 
+sass.compiler = require('node-sass');
+
 const taskOptions = { overwrite: true };
 const watchOptions = { events: 'all', ignoreInitial: false };
-const destinationPath = 'build';
 
 const htmlTask = cb => {
     src('src/*.html')
-    .pipe(dest(destinationPath, taskOptions))
+    .pipe(dest('build', taskOptions))
     .pipe(browserSync.stream());
 
     cb();
 }
 
-const lessTask = cb => {
-    src('src/*.less')
-    .pipe(less({
-        paths: [
-            '.',
-            './node_modules/bootstrap-less'
-        ]
-    }))
+const sassTask = cb => {
+    src('src/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
-    .pipe(dest(destinationPath, taskOptions))
+    .pipe(dest('build/assets/css', taskOptions))
+    .pipe(browserSync.stream());
+
+    cb();
+}
+
+const jsTask = cb => {
+    src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+    .pipe(dest('build/assets/js', taskOptions))
     .pipe(browserSync.stream());
 
     cb();
@@ -38,7 +42,8 @@ const defaultTask = () => {
         }
     });
     watch('src/*.html', watchOptions, htmlTask);
-    watch('src/*.less', watchOptions, lessTask).on('change', browserSync.reload);
+    watch('src/*.scss', watchOptions, sassTask).on('change', browserSync.reload);
+    watch('src/*.js', watchOptions, jsTask);
 }
 
 exports.default = defaultTask;
