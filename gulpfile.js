@@ -27,7 +27,7 @@ const sassTask = cb => {
 }
 
 const jsTask = cb => {
-    src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+    src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'src/*.js'])
     .pipe(dest('build/assets/js', taskOptions))
     .pipe(browserSync.stream());
 

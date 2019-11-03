@@ -3,9 +3,27 @@
 $flex: flex;
 $w100: 100%;
 
+@mixin bg-color($color) {
+    background-color: $color;
+}
+
+%top-bar {
+    display: $flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+%logo-w {
+    width: 220px;
+}
+
 img {
     max-width: $w100;
     height: auto;
+}
+
+h1 {
+    margin-bottom: 2rem;
 }
 
 .main {
@@ -15,15 +33,28 @@ img {
         position: absolute;
         z-index: 1;
         width: $w100;
-        background-color: rgba(255, 255, 255, 0.7);
+        @include bg-color(rgba(255, 255, 255, 0.7));
 
         .top__bar {
-            display: $flex;
-            justify-content: space-between;
-            padding: 30px 0;
+            @extend %top-bar;
 
             .logo {
-                width: 220px;
+                @extend %logo-w;
+            }
+        }
+    }
+}
+
+.main__page {
+    header {
+        margin-bottom: 25px;
+        @include bg-color(#f9f9f9);
+
+        .top__bar {
+            @extend %top-bar;
+
+            .logo {
+                @extend %logo-w;
             }
         }
     }
@@ -33,7 +64,7 @@ nav {
     ul {
         display: $flex;
         list-style: none;
-        padding: 0;
+        padding-top: 5px;
         margin: 0;
 
         li {
@@ -49,4 +80,8 @@ nav {
             padding-right: 0;
         }
     }
+}
+
+.img-content {
+    padding: 30px;
 }

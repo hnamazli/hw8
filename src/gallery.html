@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="main">
+    <div class="main__page">
         <header>
             <div class="container">
                 <div class="top__bar">
                     <div class="logo">
-                        <img src="assets/img/logo.svg" alt="logo">
+                        <a href="index.html"><img src="assets/img/logo.svg" alt="logo"></a>
                     </div>
                     <nav>
                     <ul>
@@ -33,11 +33,54 @@
             </div>
         </header>
         <div class="content">
-            
+            <div class="container">
+                <h1>Gallery</h1>
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/5612/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/8452/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/1254/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/987/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/1546/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/326/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/781/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/1274/640/480" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img data-toggle="modal" data-target=".img-lg" src="https://picsum.photos/seed/687/640/480" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imgModal" class="modal fade img-lg" tabindex="-1" role="dialog" aria-labelledby="largeImage" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="" alt="">
+                <div class="img-content">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae sit laborum, adipisci consectetur beatae sunt non quae vero cum repellendus enim quos, aut eligendi porro perferendis? Autem accusamus praesentium ipsum?</p>
+                </div>
+            </div>
         </div>
     </div>
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
