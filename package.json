@@ -1,0 +1,31 @@
+{
+  "name": "hw8",
+  "version": "1.0.0",
+  "description": "Home Work 8",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnamazli/hw8.git"
+  },
+  "author": "hnamazli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hnamazli/hw8/issues"
+  },
+  "homepage": "https://github.com/hnamazli/hw8#readme",
+  "dependencies": {
+    "gulp": "4.0.2",
+    "gulp-cli": "2.2.0",
+    "browser-sync": "2.26.7",
+    "gulp-less": "4.0.1",
+    "gulp-concat": "2.6.1",
+    "bootstrap": "4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "1.16.0",
+    "bootstrap-less": "3.3.8"
+  }
+}
