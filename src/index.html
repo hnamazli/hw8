@@ -9,7 +9,58 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+  <div class="main">
+    <header>
+      <div class="container">
+        <div class="top__bar">
+          <div class="logo">
+            <a href="index.html"><img src="assets/img/logo.svg" alt="logo"></a>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html">Gallery</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://picsum.photos/id/1015/1920/1080" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/1037/1920/1080" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/1036/1920/1080" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+  </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

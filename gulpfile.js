@@ -34,6 +34,14 @@ const jsTask = cb => {
     cb();
 }
 
+const imgTask = cb => {
+    src('src/*.{png,jpg,svg}')
+    .pipe(dest('build/assets/img', taskOptions))
+    .pipe(browserSync.stream());
+
+    cb();
+}
+
 const defaultTask = () => {
     browserSync.init({
         server: {
@@ -44,6 +52,7 @@ const defaultTask = () => {
     watch('src/*.html', watchOptions, htmlTask);
     watch('src/*.scss', watchOptions, sassTask).on('change', browserSync.reload);
     watch('src/*.js', watchOptions, jsTask);
+    watch('src/*.{png,jpg,svg}', watchOptions, imgTask);
 }
 
 exports.default = defaultTask;

@@ -1,1 +1,52 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+$flex: flex;
+$w100: 100%;
+
+img {
+    max-width: $w100;
+    height: auto;
+}
+
+.main {
+    position: relative;
+
+    header {
+        position: absolute;
+        z-index: 1;
+        width: $w100;
+        background-color: rgba(255, 255, 255, 0.7);
+
+        .top__bar {
+            display: $flex;
+            justify-content: space-between;
+            padding: 30px 0;
+
+            .logo {
+                width: 220px;
+            }
+        }
+    }
+}
+
+nav {
+    ul {
+        display: $flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding-right: 20px;
+
+            a {
+                font-weight: bold;
+                color: #020203;
+            }
+        }
+
+        li:last-child {
+            padding-right: 0;
+        }
+    }
+}
