@@ -85,3 +85,23 @@ nav {
 .img-content {
     padding: 30px;
 }
+
+@media(max-width: 425px) {
+    .main, .main__page {
+        header {
+            position: relative;
+
+            .top__bar {
+                justify-content: normal;
+                flex-direction: column;
+                align-items: center;
+
+                nav {
+                    ul {
+                        padding: 20px 0 0;
+                    }
+                }
+            }
+        }
+    }
+} 
