@@ -27,8 +27,16 @@ const sassTask = cb => {
 }
 
 const jsTask = cb => {
-    src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+    src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'src/*.js'])
     .pipe(dest('build/assets/js', taskOptions))
+    .pipe(browserSync.stream());
+
+    cb();
+}
+
+const imgTask = cb => {
+    src('src/*.{png,jpg,svg}')
+    .pipe(dest('build/assets/img', taskOptions))
     .pipe(browserSync.stream());
 
     cb();
@@ -44,6 +52,7 @@ const defaultTask = () => {
     watch('src/*.html', watchOptions, htmlTask);
     watch('src/*.scss', watchOptions, sassTask).on('change', browserSync.reload);
     watch('src/*.js', watchOptions, jsTask);
+    watch('src/*.{png,jpg,svg}', watchOptions, imgTask);
 }
 
 exports.default = defaultTask;
